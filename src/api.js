@@ -1,4 +1,4 @@
-const fetch = require('node-fetch');
+//const fetch = require('node-fetch');
 
 async function getCitation() {
     const response = await fetch('https://zenquotes.io/api/random');
