@@ -1,4 +1,4 @@
-name: CI/CD Node.js - Générateur de citations avancé
+name: CI/CD - Générateur de citations
 
 on:
   push:
@@ -7,15 +7,15 @@ on:
     branches: [ main ]
 
 jobs:
-
   test:
     name: Tests unitaires
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: '20'
       - run: npm ci
       - run: npm test
 
@@ -25,7 +25,12 @@ jobs:
     needs: test
     steps:
       - uses: actions/checkout@v4
-      - run: echo "Build du projet réussi !"
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npm ci
+      - run: echo "Étape build (ici rien à compiler si site statique)"
 
   deploy:
     name: Déploiement sur GitHub Pages
@@ -33,7 +38,7 @@ jobs:
     needs: build
     steps:
       - uses: actions/checkout@v4
-      - name: Déploiement sur GitHub Pages
+      - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
