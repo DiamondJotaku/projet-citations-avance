@@ -25,7 +25,7 @@ jobs:
     needs: test
     steps:
       - uses: actions/checkout@v4
-      - run: echo "Build du projet réussi !"
+      - run: npm run build
 
   deploy:
     name: Déploiement
