@@ -1,10 +1,12 @@
 async function chargerCitation() {
+      const el = document.getElementById('citation');
 
-  const el = document.getElementById('citation');
-  el.innerText = "Chargement..."
-  
-  const response = await fetch('https://zenquotes.io/api/random');
-  const data = await response.json();
+        const target = 'https://zenquotes.io/api/random';
+        const proxy = 'https://api.allorigins.win/raw?url=';
+        const url = proxy + encodeURIComponent(target) + `?cachebuster=${Date.now()}`;
+
+        const resp = await fetch(url);
+        const data = await resp.json();
         el.textContent = `${data[0].q} — ${data[0].a}`;
     }
 
