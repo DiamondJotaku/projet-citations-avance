@@ -6,16 +6,9 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Générateur de Citations</h1><br>
-    <blockquote id="citation">Chargement...</blockquote><br>
+    <h1>Générateur de Citations</h1>
+    <blockquote id="citation">Chargement...</blockquote>
     <button id="nouvelle">Nouvelle citation</button>
-  <script>async function chargerCitation() { 
-  const response = await fetch('https://zenquotes.io/api/random');
-  const data = await response.json();
-  document.getElementById('citation').innerText = `${ data[0].q } ${ data[0].a }`;
-}
-
-document.getElementById('nouvelle').addEventListener('click',chargerCitation);
-window.onload = chargerCitation;</script>
+  <script src="script.js"></script>
 </body>
 </html>
