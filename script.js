@@ -5,4 +5,4 @@ async function chargerCitation() {
 }
 
 document.getElementById('nouvelle').addEventListener('click',chargerCitation);
-window.onload = chargerCitation;
+window.onload = "chargerCitation";
