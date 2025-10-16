@@ -1,4 +1,0 @@
-body { font-family: system-ui, Arial; display:flex; align-items:center; justify-content:center; min-height:100vh; margin:0; background:#f7f7f7; }
-main { text-align:center; background:white; padding:24px; border-radius:12px; box-shadow:0 6px 18px rgba(0,0,0,0.08); max-width:700px; }
-blockquote { font-size:1.25rem; margin:18px 0; }
-button { padding:8px 14px; border-radius:8px; border:none; cursor:pointer; }
