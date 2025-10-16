@@ -1,4 +1,3 @@
-// tests/api.test.js
 const getCitation = require('../src/api');
 
 test('L\'API retourne une citation valide (string > 10)', async () => {

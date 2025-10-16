@@ -1,4 +1,4 @@
-name: CI/CD - Générateur de citations
+name: CI/CD - Générateur de citations avancé
 
 on:
   push:
