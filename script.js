@@ -1,8 +1,16 @@
-async function chargerCitation() { 
-  const response = await fetch('https://zenquotes.io/api/random');
-  const data = await response.json();
-  document.getElementById('citation').innerText = `${data.c} — ${data.a}`;
-}
+async function chargerCitation() {
+      const el = document.getElementById('citation');
 
-document.getElementById('nouvelle').addEventListener('click', chargerCitation);
-window.onload = chargerCitation;
+        const target = 'https://zenquotes.io/api/random';
+        const proxy = 'https://api.allorigins.win/raw?url=';
+        const url = proxy + encodeURIComponent(target) + `?cachebuster=${Date.now()}`;
+
+        const resp = await fetch(url);
+        const data = await resp.json();
+        el.textContent = `${data[0].q} — ${data[0].a}`;
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('nouvelle').addEventListener('click', chargerCitation);
+      chargerCitation(); // charge une citation au démarrage
+    });
