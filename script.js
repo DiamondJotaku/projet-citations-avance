@@ -1,5 +1,6 @@
 async function chargerCitation() {
       const el = document.getElementById('citation');
+      el.innerText = "Chargement..."
 
         const target = 'https://zenquotes.io/api/random';
         const proxy = 'https://api.allorigins.win/raw?url=';
